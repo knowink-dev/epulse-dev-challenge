@@ -4,5 +4,3 @@ set -e
 rm -f /app/tmp/pids/server.pid
 
 exec "$@"
-
-bundle exec rails db:create && bundle exec rails db:migrate
