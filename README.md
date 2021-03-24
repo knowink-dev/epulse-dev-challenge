@@ -4,7 +4,8 @@ This code exercise is intended to evaluate your software engineering skills but
 also give you an introduction into the types of problems we solve at KnowInk.
 Your solution will be evaluated based on the ability to produce intended
 results, cleanliness, adherence to best practices, maintainability, and
-readability. You should write code as though this is an actual assignment. 
+readability. Write this code as if you were submitting production quality code
+for a code review process.
 
 # The challenge
 
@@ -30,3 +31,6 @@ that voter as provisional.
 You'll also need to create an restful api that takes the election id as a 
 parameter and returns the name and address of all the voters registered in that
 election and allows for filtering by the provisional flag.
+
+Spend the most time getting the core relationships set up and tested correctly
+versus time on visual styling and stylesheets. 
