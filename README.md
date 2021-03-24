@@ -11,7 +11,7 @@ for a code review process.
 
 We, at KnowInk, provide a solution for election officials to efficiently handle
 voter check-ins.  When a voter arrives at a polling place, they are verified
-before giving a ballot.  Oftentimes, this involves poll workers finding the
+before being given a ballot.  Oftentimes, this involves poll workers finding the
 voter's name on a spreadsheet and determining if there are any changes needed to
 the voter's name, address etc.  In some cases, the voter's information is not
 available for validation to the poll worker.  In these situations, the voter's
@@ -19,7 +19,7 @@ ballot is considered "provisional".  It will be counted, but is marked as
 needing further validation.
 
 Your challenge, should you choose to accept it, is to build out a small app 
-that reflects the above work flow.
+that reflects the above workflow.
 
 You will need precincts, elections, poll workers and voters.  Keep in mind that
 a voter from a precinct will likely vote in multiple elections.  Poll workers,
@@ -34,3 +34,23 @@ election and allows for filtering by the provisional flag.
 
 Spend the most time getting the core relationships set up and tested correctly
 versus time on visual styling and stylesheets. 
+
+## Getting Started
+
+Clone **this** repo, please DO NOT make a fork of it.
+
+```bash
+$ git clone https://github.com/knowink-dev/epulse-dev-challenge.git
+```
+
+The project has docker and bootstrap included, but using them is not required.
+
+## Getting Finished
+
+**Please DO NOT push your work to a public fork on GitHub!**
+
+Using the command below, create a git bundle of your changes and send it to ruby-code-test@knowink.com.
+
+```bash
+$ git bundle create your_name.bundle main
+```
