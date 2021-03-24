@@ -11,7 +11,7 @@ for a code review process.
 
 We, at KnowInk, provide a solution for election officials to efficiently handle
 voter check-ins.  When a voter arrives at a polling place, they are verified
-before giving a ballot.  Oftentimes, this involves election workers finding the
+before giving a ballot.  Oftentimes, this involves poll workers finding the
 voter's name on a spreadsheet and determining if there are any changes needed to
 the voter's name, address etc.  In some cases, the voter's information is not
 available for validation to the poll worker.  In these situations, the voter's
