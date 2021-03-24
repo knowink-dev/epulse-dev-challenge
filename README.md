@@ -54,3 +54,5 @@ Using the command below, create a git bundle of your changes and send it to ruby
 ```bash
 $ git bundle create your_name.bundle main
 ```
+
+Above all, enjoy yourself!
