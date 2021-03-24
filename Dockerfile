@@ -6,7 +6,8 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle
 RUN rails webpacker:install
-RUN rails db:create && rails db:migrate
+RUN rails db:create
+RUN rails db:migrate
 COPY . /app
 
 COPY entrypoint.sh /usr/bin/
