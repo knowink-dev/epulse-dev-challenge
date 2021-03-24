@@ -33,7 +33,8 @@ parameter and returns the name and address of all the voters registered in that
 election and allows for filtering by the provisional flag.
 
 Spend the most time getting the core relationships set up and tested correctly
-versus time on visual styling and stylesheets. 
+versus time on visual styling and stylesheets. Please do take a few minutes and 
+answer the questions found in QUESTIONS.md.
 
 ## Getting Started
 
@@ -46,6 +47,8 @@ $ git clone https://github.com/knowink-dev/epulse-dev-challenge.git
 The project has docker and bootstrap included, but using them is not required.
 
 ## Getting Finished
+
+Ensure you've answered the questions found in QUESTIONS.md.
 
 **Please DO NOT push your work to a public fork on GitHub!**
 
