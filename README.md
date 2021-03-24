@@ -8,6 +8,6 @@ We, at KnowInk, provide a solution for election officials to efficiently handle 
 
 Your challenge, should you choose to accept it, is to build out a small app that reflects the above work flow.
 
-You will need precincts, elections, poll workers and voters.  Keep in mind that a voter from a precinct will likely vote in multiple elections.  Poll workers, similarly, may work in multiple elections. A poll worker will need to be able to view (for verification) the voter's name and address.  They'll also need to be able to edit the voter's information.  Doing so will mark that voter as provisional.
+You will need precincts, elections, poll workers and voters.  Keep in mind that a voter from a precinct will likely vote in multiple elections.  Poll workers, similarly, may work in multiple elections and different precints. A poll worker will need to be able to view (for verification) the voter's name and address.  They'll also need to be able to edit the voter's information.  Doing so will mark that voter as provisional.
 
 You'll also need to create an restful api that takes the election id as a parameter and returns the name and address of all the voters registered in that election and allows for filtering by the provisional flag.
