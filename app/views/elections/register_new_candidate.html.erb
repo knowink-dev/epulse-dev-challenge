@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">
+        <h4 class="text-lg text-info">Add Candidates to Election Roster</h4>
+      </div>
+      <%= simple_form_for @election do |f| %>
+        <div class="float-right pb-2">
+          <%= f.submit "Save Roster", class: 'btn btn-dark btn-sm' %>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control text-center" value="<%= @election.election_title %>" disabled />
+        </div>
+        <hr>
+        <div id="#election_candidate_enrollments">
+          <%= f.simple_fields_for :election_candidate_enrollments do |candidate| %>
+            <%= render 'election_candidate_enrollment_fields', f: candidate %>
+          <% end %>
+        </div>
+        <div class="links pt-1 pb-2 float-right">
+          <%= link_to_add_association 'Add Candidate Profile', f, :election_candidate_enrollments, class: 'btn btn-info btn-sm' %>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>

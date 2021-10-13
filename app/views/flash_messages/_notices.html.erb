@@ -1,0 +1,40 @@
+<style>
+    .alert {
+        position: absolute;
+        height: 50px;
+        width: 100%;
+        border-radius: 0px !important;
+        font-weight: lighter;
+        color: #fff !important;
+        text-align: center;
+    }
+
+    .lime-green {
+        background: #0aca71 !important;
+    }
+    .red-alert {
+        background: #9d0404 !important;
+    }
+</style>
+<% if notice %>
+  <div class="alert alert-success lime-green" style="" role="alert" id="positive_flash">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="alert alert-danger red-alert" style="" role="alert" id="negative_flash">
+    <%= alert %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.setTimeout(function() {
+            $('.alert').fadeTo(500, 0).slideUp(500,
+                function() {
+                    $(this).remove();
+                });
+        }, 5000);
+    });
+</script>

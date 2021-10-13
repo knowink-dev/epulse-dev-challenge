@@ -1,0 +1,4 @@
+<div class="form-group">
+  <%= f.association :poll_worker, include_blank: "Select Employee", class: 'form-control', collection: PollWorker.all.map {|poller| [poller.full_name, poller.id]} %>
+</div>
+

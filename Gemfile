@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap', '~> 5.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rexml'
 
-gem "mimemagic", git: "https://github.com/minad/mimemagic.git", branch: "0.3.6"
+gem "mimemagic", git: "https://github.com/minad/mimemagic.git"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,3 +58,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'tailwindcss-rails', '~> 0.5.1'
+gem 'font-awesome-rails'
+gem 'kaminari'
+gem 'simple_form'
+gem 'simple_form-tailwind'
+gem 'cocoon'
+gem 'wicked'
+gem 'chartkick'
+gem 'groupdate'
+gem 'blueprinter'
+gem 'apipie-rails'
+gem 'pg_search'

@@ -1,0 +1,29 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="text-lg font-bold text-xl text-info">Election Central</h1>
+    <%= link_to 'Setup Election', new_election_path, class: "rounded-lg py-3 px-5 bg-green-400 text-white block font-medium" %>
+  </div>
+<hr>
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Election Title</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
+        <th scope="col">Election Date</th>
+        <th scope="col">Election Type</th>
+        <th scope="col">Supervisor</th>
+        <th scope="col">Precinct</th>
+        <th scope="col">Candidate(s)</th>
+        <th scope="col"><%= fa_icon("wrench") %> Manage</th>
+      </tr>
+    </thead>
+    <tbody id="elections">
+    <%= render @elections %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,84 @@
+<%= form_with(model: precinct, class: "contents") do |form| %>
+  <% if precinct.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(precinct.errors.count, "error") %> prohibited this precinct from being saved:</h2>
+
+      <ul>
+        <% precinct.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Name <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded">REQUIRED</span>
+    </label>
+    <%= form.text_field :name, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "What is the name of the precinct that you're registering?" %>
+  </div>
+
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Voter Tabulation District <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded">REQUIRED</span>
+    </label>
+    <%= form.text_field :voter_tabulation_district, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "VTD" %>
+  </div>
+
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Congressional District
+    </label>
+    <%= form.text_field :congressional_district, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      State Senate
+    </label>
+    <%= form.text_field :state_senate, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      State House
+    </label>
+    <%= form.text_field :state_house, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Superior Court
+    </label>
+    <%= form.text_field :superior_court, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Judicial Name
+    </label>
+    <%= form.text_field :judicial_name, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Prosecutorial Name
+    </label>
+    <%= form.text_field :prosecutorial_name, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Municipality Name
+    </label>
+    <%= form.text_field :municipality_name, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Township Name
+    </label>
+    <%= form.text_field :township_name, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      School District
+    </label>
+    <%= form.text_field :school_district, class: 'shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none', placeholder: "" %>
+  </div>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-2 px-4 bg-blue-500 text-white inline-block font-medium" %>
+  </div>
+<% end %>

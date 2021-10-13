@@ -1,0 +1,36 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center float-right">
+    <div class="bg-gray-100 p-1 border-2">
+      <p class="pl-1 pr-1 pt-1">SETUP PRECINCT PROFILE</p>
+      <%= link_to 'Add New Precinct', new_precinct_path, class: "rounded-lg py-2 px-4 btn-info text-white block font-medium text-center" %>
+    </div>
+  </div>
+
+    <table class='whitespace-nowrap bg-white divide-y divide-gray-300'>
+      <thead class="bg-info">
+      <tr class="text-left">
+        <th class="px-6 text-white text-center">
+          <%= fa_icon("wrench", class: 'text-white') %> Precinct Management
+        </th>
+      </tr>
+      </thead>
+      <thead class="bg-gray-400">
+      <tr class="text-white text-left">
+        <th class="font-semibold text-sm uppercase px-4 py-4"> Name</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4"> VTD</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Congressional District</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> State Senate</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> State House</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Other Info</th>
+        <th class="font-semibold text-sm uppercase px-4 py-4 text-center"><%= fa_icon("eye", class: 'text-white') %> </th>
+      </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200" id="precincts">
+      <%= render @precincts %>
+      </tbody>
+    </table>
+</div>

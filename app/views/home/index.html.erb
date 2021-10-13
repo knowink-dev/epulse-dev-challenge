@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-charcoal"><%= fa_icon("user-circle", class: 'text-info') %> Administrative Dashboard</h4>
+      <hr>
+      <div class="py-4">
+        <div class='overflow-x-auto w-full'>
+          <table class='mx-auto max-w-4xl w-full whitespace-nowrap bg-white divide-y divide-gray-300 overflow-hidden'>
+            <thead class="bg-info">
+            <tr class="text-left">
+              <th class="px-6 text-white">
+                <%= fa_icon("university") %> Precinct(s)
+              </th>
+            </tr>
+            </thead>
+            <thead class="bg-gray-400">
+            <tr class="text-white text-left">
+              <th class="font-semibold text-sm uppercase px-4 py-4"> Name</th>
+              <th class="font-semibold text-sm uppercase px-4 py-4"> VTD</th>
+              <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Congressional District</th>
+              <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Total Election(s)</th>
+              <th class="font-semibold text-sm uppercase px-4 py-4"><%= fa_icon("eye", class: 'text-white') %> </th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            <% @precincts.each do |precinct| %>
+            <tr class="border-2">
+              <td class="px-6 py-4">
+                <div class="flex items-center space-x-3">
+                  <div>
+                    <p><%= precinct.name %></p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <p class=""><%= precinct.voter_tabulation_district %> </p>
+              </td>
+              <td class="px-6 py-4 text-center">
+               <p><%= precinct.congressional_district %></p>
+              </td>
+              <td class="px-6 py-4 text-center"><p><%= precinct.elections.size %></p> </td>
+              <td class="px-6 py-4 text-center"><%= link_to 'Manage Precinct', edit_precinct_path(precinct) %></td>
+            </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class='overflow-x-auto w-full'>
+        <table class='mx-auto max-w-4xl w-full whitespace-nowrap bg-white divide-y divide-gray-300 overflow-hidden'>
+          <thead class="bg-info">
+          <tr class="text-left">
+            <th class="px-6 text-white">
+              <%= fa_icon("pie-chart") %> Upcoming Election(s)
+            </th>
+          </tr>
+          </thead>
+          <thead class="bg-gray-400">
+          <tr class="text-white text-left">
+            <th class="font-semibold text-sm uppercase px-4 py-4"> Title</th>
+            <th class="font-semibold text-sm uppercase px-4 py-4"> State</th>
+            <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Type</th>
+            <th class="font-semibold text-sm uppercase px-4 py-4 text-center"> Election Date</th>
+            <th class="font-semibold text-sm uppercase px-4 py-4"><%= fa_icon("eye", class: 'text-white') %> </th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+          <% @elections.each do |election| %>
+          <tr class="border-2">
+            <td class="px-6 py-4">
+              <div class="flex items-center space-x-3">
+                <div>
+                  <p><%= election.election_title %></p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <p class=""><%= election.state %></p>
+            </td>
+            <td class="px-6 py-4 text-center">
+             <p><%= election.election_type %></p>
+            </td>
+            <td class="px-6 py-4 text-center"><%= date_formatter election.election_date %></td>
+            <td class="px-6 py-4 text-center"><%= link_to 'Review Election', election_path(election) %></td>
+          </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

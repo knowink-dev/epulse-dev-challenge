@@ -1,0 +1,60 @@
+<tr id="<%= dom_id election %>">
+  <td><%= election.election_title %></td>
+  <td><%= election.state %></td>
+  <td><%= election.city %></td>
+  <td><%= election.election_date.strftime("%m/%d/%Y") %></td>
+  <td><%= election.election_type %></td>
+  <td><%= election.supervisor_name %></td>
+  <td><%= election.precinct.name %></td>
+  <td class="text-center"><%= number_with_delimiter election.election_candidate_enrollments.size %></td>
+  <td>
+    <ul class="list-unstyled">
+      <li class="pb-1">
+        <button type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#<%= dom_id election %>_candidate_modal">
+          <%= fa_icon("users") %> Candidate(s)
+        </button>
+      </li>
+      <li>
+        <%= link_to election_stats_path(id: election.id), class: 'btn btn-dark btn-sm btn-block' do %>
+          <%= fa_icon("area-chart") %> Election Stats
+        <% end %>
+      </li>
+    </ul>
+
+  </td>
+</tr>
+
+<!-- Modal -->
+<div class="modal fade" id="<%= dom_id election %>_candidate_modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content remove-border-radius">
+      <div class="modal-header">
+        <h5 class="modal-title">Candidates <br> <span class="text-sm text-info"><%= election.election_title %></span> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-unstyled">
+          <% election.election_candidate_enrollments.each do |c| %>
+            <li class="border-2 p-1">
+              <p><strong>Candidate</strong> <%= c.election_candidate.full_name %></p>
+              <p><strong>Address</strong> <%= c.election_candidate.full_address %></p>
+              <p><strong class="">Gender</strong> <%= c.election_candidate.gender %></p>
+              <p class="font-weight-bold"><strong>Party</strong> <%= c.election_candidate.party %></p>
+            </li>
+          <% end %>
+          <% if election.election_candidate_enrollments.empty? %>
+          <li class="text-center">
+            <p>No candidates were registered!</p>
+          </li>
+            <% end %>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm remove-border-radius" data-dismiss="modal">Close</button>
+        <%= link_to 'Register Candidate(s)', election_register_new_candidate_path(id: election.id, election_id: election.id), class: 'btn btn-success btn-sm remove-border-radius' %>
+      </div>
+    </div>
+  </div>
+</div>

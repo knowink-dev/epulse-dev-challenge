@@ -1,0 +1,7 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="text-lg font-bold text-4xl">New election candidate</h1>
+
+  <%= render "form", election_candidate: @election_candidate %>
+
+  <%= link_to 'Back to election candidates', election_candidates_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</div>

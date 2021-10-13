@@ -1,0 +1,15 @@
+<%= form_tag(voter_search_path, method: :get) do %>
+  <div class="form-group">
+    <label>First Name</label>
+    <%= text_field_tag(:first_name, params[:search], class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <%= text_field_tag(:last_name, params[:search], class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <label>Last 4 Digits of Social</label>
+    <%= number_field_tag(:last_4_digits_ssn, params[:search], {min: 0, class: 'form-control'}) %>
+  </div>
+  <%= submit_tag :search, class: 'btn btn-dark btn-sm' %>
+<% end %>

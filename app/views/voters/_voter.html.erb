@@ -1,0 +1,9 @@
+<tr>
+  <td><%= voter.first_name %> <%= voter.last_name %></td>
+  <td><%= voter.address_1 %> <%= voter.address_2 %></td>
+  <td><%= voter.city %> <%= voter.state %></td>
+  <td><%= voter.zip_code %></td>
+  <td><%= voter.party_affiliation %></td>
+  <td><%= is_voter_provisional?(voter) %></td>
+  <td><%= link_to 'Modify', voter_path(voter), class: '' %></td>
+</tr>

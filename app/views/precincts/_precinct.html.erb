@@ -1,0 +1,34 @@
+<tr class="border-2" id="<%= dom_id precinct %>">
+  <td class="px-6 py-4">
+    <div class="flex items-center space-x-3">
+        <p><%= precinct.name %></p>
+    </div>
+  </td>
+  <td class="px-6 py-4">
+    <p><%= precinct.voter_tabulation_district %></p>
+  </td>
+  <td class="px-6 py-4 text-center">
+    <p><%= precinct.congressional_district %></p>
+  </td>
+  <td class="px-6 py-4 text-center"><p><%= precinct.state_senate %></p></td>
+  <td class="px-6 py-4 text-center"><p><%= precinct.state_house %></p></td>
+  <td class="px-6 py-4 text-center">
+    <ul class="list-unstyled" style="height: 60px; overflow-y: scroll;">
+      <li><p><%= number_with_delimiter precinct.elections.size %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> total elections documented</p></li>
+      <li><p><%= precinct.superior_court.present? ? precinct.superior_court : "none" %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> superior court </p></li>
+      <li><p><%= precinct.judicial_name.present? ? precinct.judicial_name : "none" %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> judicial name </p></li>
+      <li><p><%= precinct.prosecutorial_name.present? ? precinct.prosecutorial_name : "none" %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> prosecutorial name</p></li>
+      <li><p><%= precinct.municipality_name.present? ? precinct.municipality_name : "none" %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> municipality name </p></li>
+      <li><p><%= precinct.township_name.present? ? precinct.township_name : "none" %></p> <p class="text-gray-500 text-sm font-semibold tracking-wide"> township name </p></li>
+    </ul>
+  </td>
+  <td class="px-6 py-4 text-center">
+    <ul class="list-unstyled">
+      <li class="p-1"><%= link_to 'Assign Poll Worker(s)', precinct_assign_poll_workers_path(id: precinct.id, precinct_id: precinct.id), class: 'btn btn-outline-dark btn-sm' %></li>
+      <li class="p-1"><%= link_to 'View Election History', precinct, class: 'btn btn-success btn-sm' %></li>
+      <li class="p-1"><%= link_to 'Update Precinct Profile', edit_precinct_path(precinct), class: 'btn btn-primary btn-sm' %></li>
+      <li class="p-1"><%= link_to 'Remove Precinct', precinct, method: :delete, data: {confirm: "You cannot undo the removal of this precinct, Are you sure?"}, class: 'btn btn-danger btn-sm'  %></li>
+    </ul>
+
+  </td>
+</tr>

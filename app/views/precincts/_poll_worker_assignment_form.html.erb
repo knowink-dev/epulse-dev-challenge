@@ -1,0 +1,18 @@
+<%= simple_form_for(precinct, class: "contents") do |form| %>
+  <div class="text-center">
+    <h3 class="text-lg text-charcoal">Assign Poll Workers to Precinct: <%= precinct.name %></h3>
+  </div>
+  <hr>
+  <div id="#precinct_pollsters">
+    <%= form.simple_fields_for :precinct_pollsters do |poll_worker| %>
+      <%= render 'precinct_pollster_fields', f: poll_worker %>
+    <% end %>
+  </div>
+  <div class="links pt-1 pb-2 float-right">
+    <%= link_to_add_association 'Add Poll Worker Association', form, :precinct_pollsters, class: 'btn btn-info btn-sm' %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Poll Workers to Precinct", class: "rounded-sm py-2 px-3 bg-blue-600 text-white font-small" %>
+  </div>
+<% end %>

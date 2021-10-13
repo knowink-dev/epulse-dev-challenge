@@ -1,0 +1,26 @@
+<%= simple_form_for(election, class: "contents") do |form| %>
+  <div class="form-group">
+    <%= form.input :election_type, collection: Election.election_types.keys, include_blank: "Select Election Type", class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.input :supervisor_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.input :election_title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.input :election_date, as: :date, html5: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.input :city, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.input :state, as: :select, collection: ApplicationHelper::US_STATES, input_html: {class: 'form-control'}, include_blank: "Select State", label: "State" %>
+  </div>
+  <div class="form-group">
+    <%= form.association :precinct, collection: Precinct.all.map {|p| [p.name, p.id]}  %>
+  </div>
+  <div class="inline">
+    <%= form.submit "Launch Election", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium" %>
+  </div>
+<% end %>
