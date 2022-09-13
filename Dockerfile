@@ -1,4 +1,4 @@
-FROM ruby:3.0.0
+FROM ruby:3.1.2
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client npm
 RUN npm install --global yarn
 WORKDIR /app
